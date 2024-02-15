@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "build": "start sass --watch scss:css && start live-server"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.2",
+    "SASS": "npm:sass@^1.70.0"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "sass": "^1.70.0"
+  }
+}

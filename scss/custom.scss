@@ -1,0 +1,14 @@
+$primary: #DDA15E;
+$font-family-sans-serif: 'Poppins', sans-serif;
+
+//Custom classes
+
+.bg-white-custom {
+    background-color: #FEFAE0;
+}
+
+.bg-footer-custom {
+    background-color: #283618;
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap";
