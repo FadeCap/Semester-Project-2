@@ -59,7 +59,41 @@
       </nav>
     </header>
     <main>
-        
+      <section class="d-flex justify-content-center p-4">
+        <form id="loginForm" class="col-12 col-lg-12 d-flex flex-column gap-3">
+          <div class="mb-3">
+            <label for="InputEmail1" class="form-label">Email address</label>
+            <input
+              name="username"
+              required
+              type="email"
+              class="form-control border-0"
+              id="username"
+              aria-describedby="emailHelp"
+            />
+          </div>
+          <div class="mb-5">
+            <label for="inputPassword" class="form-label">Password</label>
+            <input
+              name="password"
+              type="password"
+              id="password"
+              class="form-control border-0 input-bg"
+              required
+              minlength="8"
+              aria-describedby="passwordHelpBlock"
+            />
+          </div>
+          <div class="d-flex gap-3 flex-row">
+            <button id="login" type="submit" class="btn btn-primary px-4 py-2">
+              Log in
+            </button>
+            <button id="register" type="submit" class="btn btn-dark px-4 py-2">
+              Register
+            </button>
+          </div>
+        </form>
+      </section>
     </main>
     <footer class="bg-footer-custom text-white text-center text-lg-start">
         <div class="container p-4">
@@ -67,7 +101,7 @@
             <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
               <img
                 class="p-3"
-                src="./assets/footer-logo.svg"
+                src="../assets/footer-logo.svg"
                 alt="Footer logo of BidWear"
               />
   
