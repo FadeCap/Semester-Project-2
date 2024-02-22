@@ -1,6 +1,11 @@
 {
+  "name": "Semester Project 2",
+  "version": "1.0.0",
+  "description": "Semester Project 2 is a project where I have to show what I've learned over the last one and a half years. The class is tasked with making an auction website",
+  "main": "index.js",
   "scripts": {
-    "build": "start sass --watch scss:css && start live-server"
+    "build": "sass src/scss:dist/css",
+    "start": "live-server & sass --watch src/scss:dist/css"
   },
   "dependencies": {
     "bootstrap": "^5.3.2",

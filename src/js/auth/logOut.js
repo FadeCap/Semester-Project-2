@@ -1,6 +1,8 @@
+
+
 function logout() {
-    localStorage.removeItem("data");
-    window.location.href = "../index.html";
+    removeKey("token")
+    removeKey("profile")
   }
   
   document.getElementById("logoutButton").addEventListener("click", function () {
