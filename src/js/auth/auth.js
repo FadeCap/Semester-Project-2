@@ -1,5 +1,5 @@
 import fetchData from "./fetchData.js";
-import { API_AUTH_URL, API_BASE_URL, API_LOGIN_URL } from "../variables/variables.js";
+import { API_AUTH_URL, API_BASE_URL } from "../variables/variables.js";
 
 document.addEventListener("submit", async (event) => {
   event.preventDefault();
