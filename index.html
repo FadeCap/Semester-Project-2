@@ -59,33 +59,30 @@
     <main class="d-flex-column justify-content-center">
       <section>
         <div class="filter-post-container">
-          <div class="container m-3 w-75">
-            <form class="input-group d-flex m-3 py-4" id="tagSearchForm">
-              <button class="btn btn-primary" type="submit">Search</button>
-              <input name="searchInput" class="form-control" id="inputSearch" type="text"
-                placeholder="Tags..." aria-label="Search" />
-            </form>
-          </div>
-          <div class="new-post-container d-flex justify-content-center">
+          
+          <div class="new-post-container py-5 d-flex justify-content-center">
             <button id="new-post-button" class="btn btn-primary">
               New auction
             </button>
           </div>
   
           <div id="post-modal" class="modal">
-            <div class="modal-content w-75 bg-primary border-0">
+            <div class="modal-content d-flex-column w-75 bg-primary border-0">
               <span class="close" id="close-button">&times;</span>
-              <form id="post-form">
+              <form id="post-form" class="d-flex-column justify-content-center p-2">
                 <label for="title">Title</label>
                 <input type="text" id="title" name="title" placeholder="Title..." required />
-                <label for="description">Description</label>
+                <label for="description" >Description</label>
                 <textarea id="description" name="description" placeholder="Description..."></textarea>
                 <label for="tags">Tags</label>
                 <input type="text" id="tags" name="tags" placeholder="Tags..." />
                 <label for="image">Image URL</label>
                 <input type="text" id="image" name="image" />
-                <button type="submit" class="btn border-2">
-                  Create
+                <label for="title" class="p-2">Ends at</label>
+                <input type="date" class="p-2" id="endsAt" name="endsAt" placeholder="Date..." required />
+
+                <button type="submit" class="btn">
+                  <img src="./assets/add.svg" class="w-25" alt="Add auction button">
                 </button>
               </form>
             </div>
