@@ -1,17 +1,13 @@
-import { API_BASE_URL, API_LOGIN_URL } from "../variables/variables";
-import { errorMessage } from "../components/error.mjs";
-import { successMessage } from "../components/success.mjs";
-import { timeout } from "../util/timeout.mjs";
-import * as storage from "../storage/index.mjs";
+import { API_BASE_URL, API_LOGIN_URL } from "../variables/variables.js";
+import { errorMessage } from "../components/error.js";
+import { successMessage } from "../components/success.js";
+import * as storage from "../storage/index.js";
 
 
 export async function login(event) {
   event.preventDefault();
 
-  // Grab error container
-  const errorContainer = event.target.querySelector(".error-container");
-
-  // Assign inputs into variables fromt the login form
+  // Assign inputs into variables from the login form
   const [email, password] = event.target.elements;
 
   // Create data object for the API
@@ -57,7 +53,7 @@ export async function login(event) {
 
       // Redirect
       await timeout(1000);
-      location.href = "../profile/";
+      location.href = ".../profile/index.html";
     }
   } catch (error) {
     console.log(error);

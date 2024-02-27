@@ -1,10 +1,8 @@
+export function logout() {
+  localStorage.removeItem("data");
+  window.location.href = "../index.html";
+}
 
-
-function logout() {
-    removeKey("token")
-    removeKey("profile")
-  }
-  
-  document.getElementById("logoutButton").addEventListener("click", function () {
-    logout();
-  });
+document.getElementById("logoutButton").addEventListener("click", function () {
+  logout();
+});
