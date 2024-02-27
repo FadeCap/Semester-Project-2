@@ -12,6 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <script type="module" src="/src/js/feed/feed.js"></script>
     <link rel="stylesheet" href="./css/custom.css" />
     <title>Homepage - BidWear</title>
   </head>
@@ -58,67 +59,85 @@
         </div>
       </nav>
     </header>
-    <main>
-      <div class="wrapper d-flex justify-content-center m-4">
-        <div class="card p-3" style="width: 18rem;">
-          <img src="https://images.unsplash.com/photo-1538895490524-0ded232a96d8?q=80&w=1830&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">zzzzzzzzzzzzzzzzzzzzz</h5>
-            <p class="card-text">zzzzzzzzzzzzzzzzzzzzzzzzzz</p>
-            <p class="card-text">
-                <strong>Tags:</strong>
-                <span class="badge badge-secondary">scooter</span>
-                <span class="badge badge-secondary">scoot</span>
-                <span class="badge badge-secondary">broom</span>
-            </p>
-            <p class="card-text"><strong>Created:</strong> 2023-12-13T00:24:36.421Z</p>
-            <p class="card-text"><strong>Updated:</strong> 2023-12-13T00:24:36.421Z</p>
-            <p class="card-text"><strong>Ends At:</strong> 2023-12-24T01:22:00.000Z</p>
-            <p class="card-text"><strong>Total Bids:</strong> 43</p>
-            <a href="#" class="btn btn-primary">Go to auction</a>
+    <main class="d-flex-column justify-content-center">
+      <section>
+        <div class="filter-post-container">
+          <div class="container m-3 w-75">
+            <form class="input-group d-flex m-3 py-4" id="tagSearchForm">
+              <button class="btn btn-primary" type="submit">Search</button>
+              <input name="searchInput" class="form-control" id="inputSearch" type="text"
+                placeholder="Tags..." aria-label="Search" />
+            </form>
           </div>
-        </div>
-      </div>
-      <div class="wrapper d-flex justify-content-center m-4">
-        <div class="card p-3" style="width: 18rem;">
-          <img src="https://images.unsplash.com/photo-1538895490524-0ded232a96d8?q=80&w=1830&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">zzzzzzzzzzzzzzzzzzzzz</h5>
-            <p class="card-text">zzzzzzzzzzzzzzzzzzzzzzzzzz</p>
-            <p class="card-text">
-                <strong>Tags:</strong>
-                <span class="badge badge-secondary">scooter</span>
-                <span class="badge badge-secondary">scoot</span>
-                <span class="badge badge-secondary">broom</span>
-            </p>
-            <p class="card-text"><strong>Created:</strong> 2023-12-13T00:24:36.421Z</p>
-            <p class="card-text"><strong>Updated:</strong> 2023-12-13T00:24:36.421Z</p>
-            <p class="card-text"><strong>Ends At:</strong> 2023-12-24T01:22:00.000Z</p>
-            <p class="card-text"><strong>Total Bids:</strong> 43</p>
-            <a href="#" class="btn btn-primary">Go to auction</a>
+          <div class="new-post-container d-flex justify-content-center">
+            <button id="new-post-button" class="btn btn-primary">
+              New auction
+            </button>
           </div>
-        </div>
-      </div>
-      <div class="wrapper d-flex justify-content-center m-4">
-        <div class="card p-3" style="width: 18rem;">
-          <img src="https://images.unsplash.com/photo-1538895490524-0ded232a96d8?q=80&w=1830&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">zzzzzzzzzzzzzzzzzzzzz</h5>
-            <p class="card-text">zzzzzzzzzzzzzzzzzzzzzzzzzz</p>
-            <p class="card-text">
-                <strong>Tags:</strong>
-                <span class="badge badge-secondary">scooter</span>
-                <span class="badge badge-secondary">scoot</span>
-                <span class="badge badge-secondary">broom</span>
-            </p>
-            <p class="card-text"><strong>Created:</strong> 2023-12-13T00:24:36.421Z</p>
-            <p class="card-text"><strong>Updated:</strong> 2023-12-13T00:24:36.421Z</p>
-            <p class="card-text"><strong>Ends At:</strong> 2023-12-24T01:22:00.000Z</p>
-            <p class="card-text"><strong>Total Bids:</strong> 43</p>
-            <a href="#" class="btn btn-primary">Go to auction</a>
+  
+          <div id="post-modal" class="modal">
+            <div class="modal-content w-75 bg-primary border-0">
+              <span class="close" id="close-button">&times;</span>
+              <form id="post-form">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" placeholder="Title..." required />
+                <label for="description">Description</label>
+                <textarea id="description" name="description" placeholder="Description..."></textarea>
+                <label for="tags">Tags</label>
+                <input type="text" id="tags" name="tags" placeholder="Tags..." />
+                <label for="image">Image URL</label>
+                <input type="text" id="image" name="image" />
+                <button type="submit" class="btn border-2">
+                  Create
+                </button>
+              </form>
+            </div>
           </div>
-        </div>
-      </div>
+          <!-- Update Modal -->
+          <div class="modal" id="update-modal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="updateModalLabel">Update Post</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <!-- Update Form -->
+                  <form id="update-form">
+                    <div class="form-group">
+                      <label for="update-title">Title</label>
+                      <input type="text" class="form-control" id="update-title" name="update-title" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="update-description">Description</label>
+                      <textarea class="form-control" id="update-description" name="update-description" rows="3"
+                        required></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="update-tags">Tags</label>
+                      <input type="text" class="form-control" id="update-tags" name="update-tags"
+                        placeholder="Separate tags with spaces" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="update-image">Image URL</label>
+                      <input type="text" class="form-control" id="update-image" name="update-image">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+      </section>
+      <section id="post-section">
+      </section>
     </main>
 
     <footer class="bg-footer-custom text-white text-center text-lg-start">

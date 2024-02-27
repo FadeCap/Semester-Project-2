@@ -10,9 +10,11 @@ document.addEventListener("submit", async (event) => {
     formData[key] = value;
   });
   const [prefix, emailSuffix] = formData.email.split("@");
-  const body = {
+   const body = {
+    name: formData.name,
     email: formData.email,
     password: formData.password,
+    avatar: formData.avatar
   };
   if (emailSuffix !== "stud.noroff.no") {
     return;
