@@ -2,8 +2,6 @@ import fetchData from "../auth/fetchData.js";
 import { API_BASE_URL, API_LISTINGS_URL } from "../variables/variables.js";
 
 const bearerToken = localStorage.getItem("data");
-const templatePicture = "../assets/no-image-available.jpg";
-const updateModal = document.getElementById("update-modal");
 
 // Redirect to post ID url
 
@@ -17,7 +15,7 @@ const postSection = document.getElementById("post-section");
 const render = async (id = null) => {
   const url = id
     ? `${API_BASE_URL}${API_LISTINGS_URL}/${id}`
-    : `${API_BASE_URL}${API_LISTINGS_URL}`;
+    : `${API_BASE_URL}${API_LISTINGS_URL}?_tag=clothes&?_active=true`;
   const postsData = await fetchData(url, {
     headers: {
       Authorization: `Bearer ${bearerToken}`,
@@ -28,30 +26,45 @@ const render = async (id = null) => {
     postData = [postsData];
   }
 
-
   // Filter posts with the tag "clothes"
-  const clothesPosts = postData.filter(post => post.tags.includes('clothes'));
+  const clothesPosts = postData.filter((post) => post.tags.includes("clothes"));
 
   for (let i = 0; i < clothesPosts.length; i++) {
-    postSection.innerHTML += `<div class="feed-container d-flex justify-content-center">
-      <div class="card container-lg bg-white-custom mt-5 m-4">
+    const endsAtString = clothesPosts[i].endsAt;
+    const dateTime = new Date(endsAtString);
+
+    // Extract the date and time components
+    const date = dateTime.toDateString();
+    const time = dateTime.toLocaleTimeString();
+
+    postSection.innerHTML += `<div class="listings-container p-4">
+      <div class="card container-lg bg-white-custom mt-5">
         <div class="card-body px-0 pb-0">
-          <p class="card-text p-3">${clothesPosts[i].title}</p>
-          <img class="w-100 rounded" onclick=" getPostByID(event)" id="${clothesPosts[i].id}" src="${clothesPosts[i].media ? clothesPosts[i].media : templatePicture}" alt="Posts image" />
+          <h3 class="card-text p-3">${clothesPosts[i].title}</h3>
+          <img class="w-100 rounded"  src="${
+            clothesPosts[i].media}" alt="Posts image" />
+          <div class="p-3">
+          <h6>Description:</h6>
+          <p class="px-4">${clothesPosts[i].description}</p>
+          <h6>Bids on this item:</h6>
+          <p class="px-4">${clothesPosts[i]._count.bids}</p>
+          <h6>Bidding ends at:</h6>
+          <p> Date: ${date} <br> Time: ${time}</p>
+          </div>
           <div id="bidBtn" class="button-container d-flex justify-content-center m-2 gap-3">
-            <button class="btn btn-primary mr-2" onclick="updatePost(event, ${clothesPosts[i].id})">Bid</button>
+            <button class="btn btn-primary mr-2" onclick=" getPostByID(event)" id="${
+              clothesPosts[i].id
+            }">Bid</button>
           </div>
         </div>
       </div>
     </div>`;
-
   }
 };
 
-
 render(postID);
 
-// New post click event and display none when clicked outside or on the cross | Feed page
+// New post click event and display none when clicked outside or on the cross
 document
   .getElementById("new-post-button")
   .addEventListener("click", function () {
@@ -90,15 +103,18 @@ postForm.addEventListener("submit", async (event) => {
   const image = formData.get("image");
   const endsAt = formData.get("endsAt");
 
+  console.log(endsAt, title, image);
   // Construct the request payload
   const requestData = {
     title: title,
-    endsAt: endsAt
+    description: description,
+    tags: [tags],
+    media: [{image}],
+    endsAt: endsAt,
   };
 
-  
   // Make the POST request
-  const postURL = `${API_BASE_URL}${API_LISTINGS_URL}`;
+  const postURL = `https://api.noroff.dev/api/v1/auction/listings`;
   const options = {
     method: "POST",
     headers: {
@@ -115,10 +131,7 @@ postForm.addEventListener("submit", async (event) => {
     }
     const responseData = await response.json();
     console.log("Listing created successfully:", responseData);
-    
   } catch (error) {
     console.error("Error creating listing:", error.message);
-    
   }
 });
-

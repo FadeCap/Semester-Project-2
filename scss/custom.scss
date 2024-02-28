@@ -11,4 +11,14 @@ $font-family-sans-serif: 'Poppins', sans-serif;
     background-color: #283618;
 }
 
+.form-control {
+    padding: 0 0 !important;
+   
+}
+
+.form-floating {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 @import "../node_modules/bootstrap/scss/bootstrap";

@@ -8,11 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="/src/js/listings/listings.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <script type="module" src="/src/js/feed/feed.js"></script>
     <link rel="stylesheet" href="./css/custom.css" />
     <title>Homepage - BidWear</title>
   </head>
@@ -58,39 +58,68 @@
     </header>
     <main class="d-flex-column justify-content-center">
       <section>
-        <div class="filter-post-container">
-          
-          <div class="new-post-container py-5 d-flex justify-content-center">
-            <button id="new-post-button" class="btn btn-primary">
-              New auction
-            </button>
-          </div>
-  
-          <div id="post-modal" class="modal">
-            <div class="modal-content d-flex-column w-75 bg-primary border-0">
-              <span class="close" id="close-button">&times;</span>
-              <form id="post-form" class="d-flex-column justify-content-center p-2">
-                <label for="title">Title</label>
-                <input type="text" id="title" name="title" placeholder="Title..." required />
-                <label for="description" >Description</label>
-                <textarea id="description" name="description" placeholder="Description..."></textarea>
-                <label for="tags">Tags</label>
-                <input type="text" id="tags" name="tags" placeholder="Tags..." />
-                <label for="image">Image URL</label>
-                <input type="text" id="image" name="image" />
-                <label for="title" class="p-2">Ends at</label>
-                <input type="date" class="p-2" id="endsAt" name="endsAt" placeholder="Date..." required />
+        <div class="new-post-container py-5 d-flex justify-content-center">
+          <button id="new-post-button" class="btn btn-primary">
+            New auction
+          </button>
+        </div>
 
-                <button type="submit" class="btn">
-                  <img src="./assets/add.svg" class="w-25" alt="Add auction button">
-                </button>
-              </form>
+      <div class="modal-wrapper d-flex-column justify-content-center">
+        <div id="post-modal" class="modal">
+          <div class="modal-content bg-primary gap-3">
+            
+            <form
+              id="post-form"
+              class="form p-4"
+            >
+            <div class="input-group mb-3">
+              <span class="input-group-text">Title</span>
+                <div class="form-floating">
+                  <input
+                  type="text"
+                  name="title"
+                  id="title"
+                  class="form-control"
+                  required
+                  />
+                </div>
+                <label for="title"></label>
             </div>
+            
+              <label for="description"></label>
+              <textarea
+                id="description"
+                name="description"
+                class="rounded w-75"
+                placeholder="Description..."
+              ></textarea>
+              <label for="tags"></label>
+              <input type="text" id="tags" name="tags" placeholder="Tags..." />
+              <label for="image"></label>
+              <input 
+              type="link"
+              id="image"
+              name="image" />
+              <label for="endsAt" class="p-2"></label>
+              <input
+                type="date"
+                id="endsAt"
+                name="endsAt"
+                placeholder="Date..."
+                required
+              />
+              <div class="modal-btn-container d-flex gap-3 justify-content-center py-3">
+                <button type="button" class="btn close btn-outline-light" id="close-button">Cancel</button type="submit">
+                <button type="submit" class="btn btn-success">
+                  Create listing
+                </button>
+              </div>
+            </form>
           </div>
-  
+        </div>
+      </div>
       </section>
-      <section id="post-section">
-      </section>
+      <section id="post-section"></section>
     </main>
 
     <footer class="bg-footer-custom text-white text-center text-lg-start">

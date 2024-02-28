@@ -7,7 +7,7 @@ import * as storage from "../storage/index.js";
 export async function login(event) {
   event.preventDefault();
 
-  // Assign inputs into variables from the login form
+  // Assign inputs into variables fromt the login form
   const [email, password] = event.target.elements;
 
   // Create data object for the API
@@ -53,7 +53,7 @@ export async function login(event) {
 
       // Redirect
       await timeout(1000);
-      location.href = ".../profile/index.html";
+      location.href = "../profile/index.html";
     }
   } catch (error) {
     console.log(error);
