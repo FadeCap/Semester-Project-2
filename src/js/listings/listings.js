@@ -29,6 +29,8 @@ const render = async (id = null) => {
   // Filter posts with the tag "clothes"
   const clothesPosts = postData.filter((post) => post.tags.includes("clothes"));
 
+
+//Formatting Date and time sent from API into a Date and a time string
   for (let i = 0; i < clothesPosts.length; i++) {
     const endsAtString = clothesPosts[i].endsAt;
     const dateTime = new Date(endsAtString);
@@ -86,6 +88,8 @@ document
   .getElementById("post-form")
   .addEventListener("submit", function (event) {
     event.preventDefault();
+    
+    window.location.reload();
   });
 
 // Creating post
@@ -109,7 +113,7 @@ postForm.addEventListener("submit", async (event) => {
     title: title,
     description: description,
     tags: [tags],
-    media: [{image}],
+    media: [image],
     endsAt: endsAt,
   };
 
