@@ -1,7 +1,7 @@
 import fetchData from "../auth/fetchData.js";
-import { API_BASE_URL, API_LISTINGS_URL } from "../variables/variables.js";
+import { API_BASE_URL, API_LISTINGS_URL, tagParams } from "../variables/variables.js";
 
-const bearerToken = localStorage.getItem("data");
+const bearerToken = localStorage.getItem("data")
 
 // Redirect to post ID url
 
@@ -15,7 +15,7 @@ const postSection = document.getElementById("post-section");
 const render = async (id = null) => {
   const url = id
     ? `${API_BASE_URL}${API_LISTINGS_URL}/${id}`
-    : `${API_BASE_URL}${API_LISTINGS_URL}?_tag=clothes&?_active=true`;
+    : `${API_BASE_URL}${API_LISTINGS_URL}${tagParams}`;
   const postsData = await fetchData(url, {
     headers: {
       Authorization: `Bearer ${bearerToken}`,
