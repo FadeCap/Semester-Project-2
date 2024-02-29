@@ -1,6 +1,7 @@
 export function logout() {
   localStorage.removeItem("data");
-  window.location.href = "../index.html";
+  localStorage.removeItem("name");
+  window.location.href = "../login/";
 }
 
 document.getElementById("logoutButton").addEventListener("click", function () {

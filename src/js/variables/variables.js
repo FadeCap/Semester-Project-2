@@ -16,4 +16,7 @@ export const tagParams = "?_tag=clothes&?_active=true"
 
 
 //BearerToken
-// export const bearerToken = localStorage.getItem("data");
+export const bearerToken = localStorage.getItem("data");
+
+//userName
+export const userName = localStorage.getItem("name");

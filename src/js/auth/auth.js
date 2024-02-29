@@ -10,11 +10,11 @@ document.addEventListener("submit", async (event) => {
     formData[key] = value;
   });
   const [prefix, emailSuffix] = formData.email.split("@");
-   const body = {
+  const body = {
     name: formData.name,
     email: formData.email,
     password: formData.password,
-    avatar: formData.avatar
+    avatar: formData.avatar,
   };
   if (emailSuffix !== "stud.noroff.no") {
     return;
@@ -39,8 +39,9 @@ document.addEventListener("submit", async (event) => {
   if (buttonPressed === "register") {
     alert("Account created");
   } else {
-    const { accessToken } = responseData;
+    const { accessToken, name } = responseData;
     localStorage.setItem("data", accessToken);
+    localStorage.setItem("name", name);
     window.location.href = "../profile/";
   }
 });
