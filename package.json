@@ -16,5 +16,11 @@
   "devDependencies": {
     "concurrently": "^8.2.2",
     "live-server": "^1.2.1"
-  }
+  },
+  "keywords": [
+    "auction",
+    "website"
+  ],
+  "author": "Stian Busengdal",
+  "license": "MIT"
 }
