@@ -1,5 +1,7 @@
 import { renderPosts } from './renderListing.js';
 import { createListing } from './createListing.js';
+import { redirectPostById } from "./redirectPostById.js";
+
 
 // Event listener for DOMContentLoaded
 document.addEventListener("DOMContentLoaded", async function () {
