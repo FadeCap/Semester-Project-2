@@ -7,6 +7,7 @@ export function displayListingDetails(listingDetails) {
       listingContainer.innerHTML = '<h5>Failed to fetch listing details.</h5>';
       return;
     }
+    
 
     // Create a new object with the desired structure
     const formattedListing = {
@@ -23,6 +24,12 @@ export function displayListingDetails(listingDetails) {
       }
     };
 
+    const endsAtString = listingDetails.endsAt;
+      const dateTime = new Date(endsAtString);
+
+      const date = dateTime.toDateString();
+      const time = dateTime.toLocaleTimeString();
+
     // Now you can use the formattedListing object for rendering
     listingContainer.innerHTML = `
     <div class="card container-lg">
@@ -36,7 +43,7 @@ export function displayListingDetails(listingDetails) {
             <h6>Bids on this item:</h6>
             <p class="px-4 text-center">${formattedListing._count.bids}</p>
             <h6>Bidding ends at:</h6>
-            <p> Date: ${formattedListing.endsAt} <br> Time:</p>
+            <p> Date:${date} <br> Time:${time}</p>
             <div class="bidBtnContainer d-flex justify-content-center">
                 <button id="place-bid-btn" class="btn btn-dark">Place bid</button>
             </div>
