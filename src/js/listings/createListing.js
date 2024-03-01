@@ -8,14 +8,14 @@ export async function createListing(event) {
   const title = formData.get("title");
   const description = formData.get("description");
   const tags = formData.get("tags");
-  const image = formData.get("image");
+  const images = formData.get("images").split(",");
   const endsAt = formData.get("endsAt");
 
   const requestData = {
     title: title,
     description: description,
     tags: [tags],
-    media: [image],
+    media: images,
     endsAt: endsAt,
   };
 
@@ -29,7 +29,7 @@ export async function createListing(event) {
     body: JSON.stringify(requestData),
   };
 
-  let response; // Define response variable here
+  let response;
 
   try {
     response = await fetchData(postURL, options);

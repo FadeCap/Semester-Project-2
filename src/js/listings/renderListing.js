@@ -19,7 +19,7 @@ export async function renderPosts() {
       postData = [postsData];
     }
 
-    const clothesPosts = postData.filter((post) => post.tags.includes("clothes"));
+     const clothesPosts = postData.filter((post) => post.tags.includes("clothes"));
 
     for (let i = 0; i < clothesPosts.length; i++) {
       const endsAtString = clothesPosts[i].endsAt;
@@ -28,11 +28,17 @@ export async function renderPosts() {
       const date = dateTime.toDateString();
       const time = dateTime.toLocaleTimeString();
 
+      // Construct a string of HTML for multiple images
+      let imagesHTML = '';
+      for (let j = 0; j < clothesPosts[i].media.length; j++) {
+        imagesHTML += `<img class="w-100 rounded p-2" src="${clothesPosts[i].media[j]}" alt="Post image ${j+1}" />`;
+      }
+
       postSection.innerHTML += `<div class="listings-container p-4">
         <div class="card container-lg bg-white-custom mt-5">
           <div class="card-body px-0 pb-0">
             <h3 class="card-text text-center p-3">${clothesPosts[i].title}</h3>
-            <img class="w-100 rounded" src="${clothesPosts[i].media}" alt="Posts image" />
+            <div class="post-images">${imagesHTML}</div>
             <div class="p-3">
               <h6>Description:</h6>
               <p class="px-4">${clothesPosts[i].description}</p>
