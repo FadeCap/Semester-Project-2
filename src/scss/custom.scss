@@ -1,0 +1,44 @@
+// Define custom primary color
+$primary: #DDA15E;
+$font-family-sans-serif: 'Poppins', sans-serif;
+
+// Import Bootstrap's SCSS styles first
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Define custom styles after Bootstrap's styles
+
+
+// Custom classes
+.bg-white-custom {
+    background-color: #FEFAE0;
+}
+
+.bg-footer-custom {
+    background-color: #283618;
+}
+
+.form-control {
+    padding: 0; // Remove redundant padding
+}
+
+.form-floating {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-brand img {
+    max-width: 130px !important; /* Adjust as needed */
+    height: auto !important;
+}
+
+.login-container {
+    max-width: 500px; /* Set your desired maximum width */
+    margin: auto; /* Center the container horizontally */
+    padding: 0 15px; /* Add padding to the container */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
