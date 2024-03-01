@@ -1,8 +1,9 @@
-Semester Project 2
-
+#Semester Project 2
 Version: 1.0.0
+
 Description: Semester Project 2 is a project where I have to show what I've learned over the last one and a half years. The class is tasked with making an auction website.
-Installation
+
+##Installation
 
 To install the project dependencies, use npm:
 
