@@ -28,7 +28,7 @@ export function displayListingDetails(listingDetails) {
     <div class="card container-lg">
         <h3 class="card-text text-center p-3">${formattedListing.title}</h3>
         <div class="post-images">
-            ${formattedListing.media.map(imageUrl => `<img class="w-100 rounded p-2" src="${imageUrl}"/>`).join('')}
+            ${formattedListing.media.map(imageUrl => `<img class="w-100 rounded-4 p-2" src="${imageUrl}"/>`).join('')}
         </div>
         <div class="p-3">
             <h6>Description:</h6>

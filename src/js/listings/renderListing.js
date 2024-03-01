@@ -32,7 +32,7 @@ export async function renderPosts() {
       // Construct a string of HTML for multiple images
       let imagesHTML = "";
       for (let j = 0; j < clothesPosts[i].media.length; j++) {
-        imagesHTML += `<img class="w-100 rounded p-2" src="${clothesPosts[i].media[j]}" alt="Post image ${j + 1}" />`;
+        imagesHTML += `<img class="w-100 rounded-4 p-2" src="${clothesPosts[i].media[j]}" alt="Post image ${j + 1}" />`;
       }
 
       const bidButton = document.createElement('button');
