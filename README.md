@@ -20,7 +20,6 @@ To start the development server and watch for changes in the SCSS files, run:
 npm start
 ```
 
-This command will launch the development server using live-server and watch for changes in the SCSS files using SASS.
 
 ## Dependencies
 * Bootstrap: ^5.3.3
