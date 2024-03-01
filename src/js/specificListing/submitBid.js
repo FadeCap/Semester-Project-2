@@ -26,7 +26,7 @@ export async function submitBid(listingId, amount) {
       alert('Bid placed successfully!');
     } catch (error) {
       console.error('Error placing bid:', error);
-      alert('Failed to place bid. Please try again later.');
+      alert('Failed to place bid. Are you logged in?');
     }
   }
   

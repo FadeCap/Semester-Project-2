@@ -1,4 +1,4 @@
-import * as storage from "../storage/index.js"
+
 
 // API URLs
 export const API_BASE_URL = "https://api.noroff.dev/api/v1";

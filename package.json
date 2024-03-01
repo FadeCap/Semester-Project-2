@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
+    "sass": "sass --watch src/scss:dist/css",
     "start": "live-server & sass --watch src/scss:dist/css"
   },
   "dependencies": {
