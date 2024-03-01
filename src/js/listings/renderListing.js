@@ -64,7 +64,7 @@ export async function renderPosts() {
       const cardContainer = document.createElement('div');
       cardContainer.classList.add('listings-container', 'p-4');
       cardContainer.innerHTML = `
-        <div class="card container-lg bg-white-custom mt-5">
+        <div class="card container-lg mt-5">
         </div>`;
       cardContainer.querySelector('.card').appendChild(cardBody);
 

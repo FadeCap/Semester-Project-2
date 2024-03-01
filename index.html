@@ -19,95 +19,126 @@
   <body class="bg-white-custom">
     <header>
       <nav class="navbar navbar-expand-lg bg-primary p-4">
-          <div class="container-fluid">
-              <!-- Logo -->
-              <a class="navbar-brand" href="/">
-                  <img src="./assets/logo-header.svg" class="img-fluid image-test" alt="BidWear Logo">
-              </a>
-  
-              <!-- Navbar Toggler Button -->
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-  
-              <!-- Navbar Collapse -->
-              <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                  <ul class="navbar-nav">
-                      <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="#">Home</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="./login/">Login</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="./profile/">Profile</a>
-                      </li>
-                      <!-- Add more navigation items as needed -->
-                  </ul>
-              </div>
+        <div class="container-fluid">
+          <!-- Logo -->
+          <a class="navbar-brand" href="/">
+            <img
+              src="./assets/logo-header.svg"
+              class="img-fluid image-test"
+              alt="BidWear Logo"
+            />
+          </a>
+
+          <!-- Navbar Toggler Button -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Navbar Collapse -->
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./login/">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./profile/">Profile</a>
+              </li>
+            </ul>
           </div>
+        </div>
       </nav>
-  </header>
-  
-  
+    </header>
+
     <main class="d-flex-column justify-content-center">
       <section>
         <div class="new-post-container py-5 d-flex justify-content-center">
-          <button id="new-post-button"
-           class="btn btn-primary"
-           >
+          <button id="new-post-button" class="btn btn-primary">
             New auction
           </button>
         </div>
 
-      <div class="modal-wrapper d-flex-column justify-content-center">
-        <div class="modal-wrapper d-flex m-4">
+        <div class="modal-wrapper">
           <div id="post-modal" class="modal">
             <div class="modal-content bg-primary gap-3">
-              
-              <form
-                id="post-form"
-                class="form p-4"
-              >
-              <div class="input-group mb-3">
-                <span class="input-group-text">Title</span>
-                  <div class="form-floating">
-                    <input
+              <form id="post-form" class="form p-4">
+                <div class="form-group">
+                  <label for="title">Title</label>
+                  <input
                     type="text"
                     name="title"
                     id="title"
                     class="form-control"
+                    placeholder="Title..."
                     required
-                    />
-                  </div>
-                  <label for="title"></label>
-              </div>
-              
-                <label for="description"></label>
-                <textarea
-                  id="description"
-                  name="description"
-                  class="rounded w-75"
-                  placeholder="Description..."
-                ></textarea>
-                <label for="tags"></label>
-                <input type="text" id="tags" name="tags" placeholder="Tags..." />
-                <label for="image"></label>
-                <input 
-                type="link"
-                id="images"
-                name="images" />
-                <label for="endsAt" class="p-2"></label>
-                <input
-                  type="date"
-                  id="endsAt"
-                  name="endsAt"
-                  placeholder="Date..."
-                  required
-                />
-                <div class="modal-btn-container d-flex gap-3 justify-content-center py-3">
-                  <button type="button" id="close-button" class="btn close btn-outline-light" id="close-button">Cancel</button>
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="description">Description</label>
+                  <textarea
+                    id="description"
+                    name="description"
+                    class="form-control"
+                    placeholder="Description..."
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="tags">Tags</label>
+                  <input
+                    type="text"
+                    id="tags"
+                    name="tags"
+                    class="form-control"
+                    placeholder="Tags..."
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="images">Image Link</label>
+                  <input
+                    type="url"
+                    id="images"
+                    name="images"
+                    class="form-control"
+                    placeholder="Image url..."
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="endsAt">Ends At</label>
+                  <input
+                    type="date"
+                    id="endsAt"
+                    name="endsAt"
+                    class="form-control"
+                    required
+                  />
+                </div>
+
+                <div
+                  class="modal-btn-container d-flex justify-content-center py-3"
+                >
+                  <button
+                    type="button"
+                    id="close-button"
+                    class="btn close btn-outline-light"
+                  >
+                    Cancel
+                  </button>
                   <button type="submit" class="btn btn-success">
                     Create listing
                   </button>
@@ -116,8 +147,8 @@
             </div>
           </div>
         </div>
-      </div>
       </section>
+
       <section id="post-section"></section>
     </main>
 
