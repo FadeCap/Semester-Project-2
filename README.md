@@ -7,14 +7,14 @@ Semester Project 2
 
 Making an auction based website with several requirements:
     
-      Registration and Authentication:
+    Registration and Authentication:
         Users with a stud.noroff.no email may register and login.
         Registered users can logout.
 
-     User Profile:
+    User Profile:
         Registered users can update their avatar and view their total credit.
 
-     Listings:
+    Listings:
         Registered users can create Listings with a title, deadline date, media gallery, and description.
         Users can add Bids to another user’s Listing.
         Users can view Bids made on a Listing.
