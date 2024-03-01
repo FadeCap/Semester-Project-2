@@ -37,10 +37,10 @@ npm start
 
 ## Links for this project
 
-* Gantt chart:
-* Design:
-* Kanban board:
-* Repository link:
+* Gantt chart: 
+* Design: https://www.figma.com/file/fwL7cQzRu2N16CrPjSxyT1/Semester-Project-2?type=design&node-id=0%3A1&mode=design&t=B5Fd4waF4Lo7GPzQ-1
+* Kanban board: https://trello.com/b/b0XmNfSZ/kanban-semester-project-2
+* Repository link: https://github.com/FadeCap/Semester-Project-2
 * Hosted application: https://workflow--semeter-project-2-stian.netlify.app/
 
 
