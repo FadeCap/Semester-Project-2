@@ -34,8 +34,9 @@ export function displayListingDetails(listingDetails) {
   const date = dateTime.toDateString();
   const time = dateTime.toLocaleTimeString();
 
-  // Now you can use the formattedListing object for rendering
-  listingContainer.innerHTML = `
+ // Now you can use the formattedListing object for rendering
+listingContainer.innerHTML = `
+<div class="listing-wrapper">
     <div class="card container-lg d-flex-column justify-content-center">
         <h3 class="card-text text-center p-3">${formattedListing.title}</h3>
         <div class="post-images">
@@ -56,8 +57,8 @@ export function displayListingDetails(listingDetails) {
                     ${formattedListing.bids
                       .map(
                         (bid) => `
-                    <li class="list-group-item p-3">Bidder Name: ${bid.bidderName} <br> Amount: ${bid.amount}</li>
-                    `
+                        <li class="list-group-item p-3">Bidder Name: ${bid.bidderName} <br> Amount: ${bid.amount}</li>
+                        `
                       )
                       .join("")}
                 </ul>
@@ -69,15 +70,15 @@ export function displayListingDetails(listingDetails) {
             </div>
         </div>
     </div>
-    `;
+</div>
+`;
 
-  const placeBidButton = document.getElementById("place-bid-btn");
-  placeBidButton.addEventListener("click", () => {
-    const amount = prompt("Enter your bid amount:");
-    if (amount !== null && !isNaN(parseFloat(amount)) && isFinite(amount)) {
-      submitBid(formattedListing.id, parseFloat(amount));
-    } else {
-      alert("Invalid bid amount.");
-    }
-  });
+const placeBidButton = document.getElementById("place-bid-btn");
+placeBidButton.addEventListener("click", () => {
+const amount = prompt("Enter your bid amount:");
+if (amount !== null && !isNaN(parseFloat(amount)) && isFinite(amount)) {
+    submitBid(formattedListing.id, parseFloat(amount));
+} else {
+    alert("Invalid bid amount.");
 }
+})};
