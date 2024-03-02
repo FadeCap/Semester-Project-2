@@ -35,6 +35,17 @@ To start the development server and watch for changes in the SCSS files, run:
 npm start
 ```
 
+Runs ESlint through the project:
+```bash
+npm run lint
+```
+
+Runs ESlint and forces the --fix:
+```bash
+npm run lint:fix
+```
+
+
 ## Links for this project
 
 * [Gantt chart]() 
