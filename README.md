@@ -34,6 +34,16 @@ To start the development server and watch for changes in the SCSS files, run:
 ```bash
 npm start
 ```
+        Starts the dev server + SASS starts watching
+
+```bash
+npm run lint
+```
+        Runs ESlint throught the project
+```bash
+npm run lint:fix
+```
+        Runs ESlint and forces the --fix
 
 ## Links for this project
 
