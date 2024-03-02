@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "dev-server": "live-server",
     "watch-css": "sass --watch src/scss:dist/css",
     "start": "concurrently \"npm run dev-server\" \"npm run watch-css\""
