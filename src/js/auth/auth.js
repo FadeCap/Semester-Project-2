@@ -34,7 +34,7 @@ document.addEventListener("submit", async (event) => {
 
   const responseData = await fetchData(
     `${API_BASE_URL}${API_AUTH_URL}${buttonPressed}`,
-    options
+    options,
   );
   if (buttonPressed === "register") {
     alert("Account created");

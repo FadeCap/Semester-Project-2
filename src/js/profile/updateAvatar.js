@@ -29,7 +29,7 @@ export async function updateProfile(event) {
           Authorization: `Bearer ${bearerToken}`,
           "Content-Type": "application/json; charset=utf-8",
         },
-      }
+      },
     );
 
     // Check if the update was successful

@@ -26,7 +26,6 @@ export function displayListingDetails(listingDetails) {
       bidderName: bid.bidderName,
     })),
   };
-  console.log("formatted", formattedListing);
 
   const endsAtString = listingDetails.endsAt;
   const dateTime = new Date(endsAtString);
@@ -34,8 +33,8 @@ export function displayListingDetails(listingDetails) {
   const date = dateTime.toDateString();
   const time = dateTime.toLocaleTimeString();
 
- // Now you can use the formattedListing object for rendering
-listingContainer.innerHTML = `
+  // Now you can use the formattedListing object for rendering
+  listingContainer.innerHTML = `
 <div class="listing-wrapper">
     <div class="card container-lg d-flex-column justify-content-center">
         <h3 class="card-text text-center p-3">${formattedListing.title}</h3>
@@ -43,7 +42,7 @@ listingContainer.innerHTML = `
             ${formattedListing.media
               .map(
                 (imageUrl) =>
-                  `<img class="w-100 rounded-4 p-2" src="${imageUrl}"/>`
+                  `<img class="w-100 rounded-4 p-2" src="${imageUrl}"/>`,
               )
               .join("")}
         </div>
@@ -58,7 +57,7 @@ listingContainer.innerHTML = `
                       .map(
                         (bid) => `
                         <li class="list-group-item p-3">Bidder Name: ${bid.bidderName} <br> Amount: ${bid.amount}</li>
-                        `
+                        `,
                       )
                       .join("")}
                 </ul>
@@ -73,12 +72,13 @@ listingContainer.innerHTML = `
 </div>
 `;
 
-const placeBidButton = document.getElementById("place-bid-btn");
-placeBidButton.addEventListener("click", () => {
-const amount = prompt("Enter your bid amount:");
-if (amount !== null && !isNaN(parseFloat(amount)) && isFinite(amount)) {
-    submitBid(formattedListing.id, parseFloat(amount));
-} else {
-    alert("Invalid bid amount.");
+  const placeBidButton = document.getElementById("place-bid-btn");
+  placeBidButton.addEventListener("click", () => {
+    const amount = prompt("Enter your bid amount:");
+    if (amount !== null && !isNaN(parseFloat(amount)) && isFinite(amount)) {
+      submitBid(formattedListing.id, parseFloat(amount));
+    } else {
+      alert("Invalid bid amount.");
+    }
+  });
 }
-})};

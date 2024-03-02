@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Fetch user information from the API
     const response = await fetch(
       `${API_BASE_URL}${API_PROFILE_URL}/${userName}`,
-      options
+      options,
     );
 
     // Check if the request was successful

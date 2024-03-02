@@ -13,7 +13,7 @@ export async function fetchUserInfo(bearerToken, userName) {
 
     const response = await fetch(
       `${API_BASE_URL}${API_PROFILE_URL}/${userName}`,
-      options
+      options,
     );
 
     if (!response.ok) {

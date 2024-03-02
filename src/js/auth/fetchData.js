@@ -7,7 +7,7 @@ const fetchData = async (url, options) => {
       // Check if response has error message
       if (data && data.message) {
         throw new Error(
-          `Request failed with status ${response.status}: ${data.message}`
+          `Request failed with status ${response.status}: ${data.message}`,
         );
       } else {
         throw new Error(`Request failed with status ${response.status}`);

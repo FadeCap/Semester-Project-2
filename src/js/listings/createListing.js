@@ -1,5 +1,9 @@
 import fetchData from "../auth/fetchData.js";
-import { API_BASE_URL, bearerToken, API_LISTINGS_URL } from "../variables/variables.js";
+import {
+  API_BASE_URL,
+  bearerToken,
+  API_LISTINGS_URL,
+} from "../variables/variables.js";
 
 export async function createListing(event) {
   event.preventDefault();
