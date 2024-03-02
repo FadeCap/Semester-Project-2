@@ -1,5 +1,6 @@
 import { renderPosts } from './renderListing.js';
 import { createListing } from './createListing.js';
+import { filterListings } from './searchBar.js';
 
 // Event listener for DOMContentLoaded
 document.addEventListener("DOMContentLoaded", async function () {
@@ -25,5 +26,14 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (event.target === modal) {
             modal.style.display = "none";
         }
+    });
+
+    // Event listener for search button
+    document.getElementById("searchButton").addEventListener("click", function () {
+        // Get the search term from the search bar
+        const searchTerm = document.getElementById("searchBar").value.trim().toLowerCase();
+        
+        // Call filterListings function with the search term
+        filterListings(searchTerm);
     });
 });
