@@ -45,9 +45,16 @@ npm start
 
 
 ## Dependencies
-* Bootstrap: ^5.3.3
-* SASS: ^1.71.1
+* Bootstrap: 5.3.3
+* SASS: 1.71.1
+* SASS: "npm:sass@1.70.0"
 
 ## Development Dependencies
-* concurrently: ^8.2.2
-* live-server: ^1.2.1
+* concurrently: 8.2.2
+* live-server: 1.2.1
+* cypress: 13.6.6
+* eslint: 8.57.0
+* eslint-config-prettier: 9.1.0
+* eslint-plugin-prettier: 5.1.3
+* prettier: 3.2.5
+    
