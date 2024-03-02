@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Profile page of BidWear" />
+    <link rel="icon" type="image/x-icon" href="../assets/logo-header.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="../src/js/auth/logOut.js"></script>
+    <script type="module" src="../src/js/profile/index.js"></script>
+    <link rel="stylesheet" href="../dist/css/custom.css" />
+    <title>Profile page - BidWear</title>
+  </head>
+  <body class="bg-white-custom">
+    <header>
+      <nav class="navbar navbar-expand-lg bg-primary p-4">
+        <div class="container-fluid d-flex">
+          <a class="navbar-brand w-50" href="/"
+            ><img
+              class="w-75"
+              src="../assets/logo-header.svg"
+              alt="BidWear Logo"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+          
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Listings</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../login/">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/profile/"
+                  >Profile</a
+                >
+              </li>
+             
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true"></a>
+              </li>
+            </ul>
+          </div>
+          <div class="logout-button.container">
+            <button id="logoutButton" class="btn btn-dark">Logout</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <div class="profile-card card-body p-2 d-flex flex-column align-items-center m-4">
+          <div class="top-profile-container d-flex p-2" style="max-width: 500px;">
+            <div class="profile-picture-container" style="max-width: 200px;">
+              <img
+                id="avatar"
+                class="w-50 rounded-3"
+                src="../assets/no-user-avatar.png"
+                alt="Profile picture"
+              />
+            </div>
+            <div class="update-avatar-container px-3">
+              <h3 id="profileUsername">Username placeholder</h3>
+              
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+              >
+                Update Avatar
+              </button>
+
+              <!-- Modal -->
+              <div
+                class="modal fade"
+                id="staticBackdrop"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                        Update Avatar URL:
+                      </h1>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="input">URL</span>
+                        <input type="text" class="form-control" id="updateAvatarUrl" aria-label="updateAvatarUrl" aria-describedby="updateAvatarUrl">
+                      </div>
+                      
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button type="button" class="btn btn-primary" id="updateAvatarUrlBtn">
+                        Update
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bottom-profile-container d-flex justify-content-evenly mt-4"
+          >
+          <div class="creditContainer">
+            <h5>Credits:</h5>
+            <p id="userCredits" class="text-center"></p>
+          </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-footer-custom text-white text-center text-lg-start">
+      <div class="container p-4">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+            <img
+              class="p-3"
+              src="../assets/footer-logo.svg"
+              alt="Footer logo of BidWear"
+            />
+
+            <p>
+              Thank you for choosing BidWear! We appreciate your visit and trust
+              in our services. Explore our offerings, and experience the ease
+              and style that BidWear brings to your wardrobe. Your satisfaction
+              is our priority.
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <ul class="list-unstyled p-2 mb-0">
+              <li>
+                <a href="../" class="text-white">Listings</a>
+              </li>
+              <li>
+                <a href="../login/" class="text-white">Login</a>
+              </li>
+              <li>
+                <a href="../profile/" class="text-white">Profile</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2024 Copyright:
+        <a class="text-white" href="/">BidWear</a>
+      </div>
+    </footer>
+  </body>
+</html>

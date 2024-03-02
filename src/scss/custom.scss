@@ -1,0 +1,78 @@
+// Define custom primary color & font
+$primary: #DDA15E;
+$font-family-sans-serif: 'Poppins', sans-serif;
+
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+
+
+// Custom classes
+.bg-white-custom {
+    background-color: #FEFAE0;
+}
+
+.bg-footer-custom {
+    background-color: #283618;
+}
+
+.form-control {
+    padding: 0; 
+}
+
+.form-floating {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-brand img {
+    max-width: 130px !important;
+    height: auto !important;
+}
+
+.login-container {
+    max-width: 500px;
+    margin: auto; 
+    padding: 0 15px; 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.card {
+    max-width: 500px;
+}
+
+.listing-wrapper {
+    max-width: 500px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+}
+
+
+.modal-content {
+    max-width: 400px;
+}
+
+#post-form.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form-control {
+    padding: 10px;
+}
+
+.modal-btn-container {
+    gap: 2rem;
+}
+
+footer {
+    margin-top: auto;
+}

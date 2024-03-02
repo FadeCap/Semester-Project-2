@@ -1,0 +1,20 @@
+<label for="InputUserName" class="form-label">Username</label>
+          <input
+              name="username"
+              required
+              type="username"
+              class="form-control border-1"
+              id="username"
+              aria-describedby="usernameHelp"
+            />
+          <div>
+            <div>
+              <label for="InputAvatar" class="form-label">Avatar (img url)</label>
+              <input
+              name="avatar"
+              type="avatar"
+              class="form-control border-1"
+              id="avatar"
+              aria-describedby="avatarHelp"
+            />
+            </div>
