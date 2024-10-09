@@ -21,6 +21,13 @@ Making an auction based website with several requirements
         Users can view Bids made on a Listing.
         Unregistered users may search through Listings.
 
+## Built With
+
+- [Bootstrap](https://getbootstrap.com/)
+- [SASS](https://sass-lang.com/)
+
+## Getting Started
+
 ### Installation
 
 Clone repository: 
@@ -35,7 +42,7 @@ To install the project dependencies, use npm:
 npm install
 ```
 
-## Usage
+## Running
 
 To start the development server and watch for changes in the SCSS files, run:
 
